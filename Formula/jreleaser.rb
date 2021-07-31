@@ -1,9 +1,9 @@
 class Jreleaser < Formula
   desc "Release Java projects quickly and easily with JReleaser"
   homepage "https://jreleaser.org"
-  version "0.5.0"
-  url "https://github.com/jreleaser/jreleaser/releases/download/v0.5.0/jreleaser-0.5.0.zip"
-  sha256 "d770b9e9862e7aae3da2c2217d6b38cb04eeab9d8a98fb330e1eba2693a9ee4e"
+  version "0.6.0"
+  url "https://github.com/jreleaser/jreleaser/releases/download/v0.6.0/jreleaser-0.6.0.zip"
+  sha256 "3948a7457e4e6869138a34666f1eeb48216c8d5681dcd29318acc6418f92ed54"
   license "Apache-2.0"
 
   bottle :unneeded
@@ -17,6 +17,6 @@ class Jreleaser < Formula
 
   test do
     output = shell_output("#{bin}/jreleaser --version")
-    assert_match "0.5.0", output
+    assert_match "0.6.0", output
   end
 end
