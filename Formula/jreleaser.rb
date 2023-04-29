@@ -1,25 +1,25 @@
-# Generated with JReleaser 1.6.0-SNAPSHOT at 2023-03-12T10:15:10.135700883Z
+# Generated with JReleaser 1.6.0-SNAPSHOT at 2023-04-29T10:13:03.544759325Z
 class Jreleaser < Formula
   desc "Release projects quickly and easily with JReleaser"
   homepage "https://jreleaser.org"
-  version "1.5.1"
+  version "1.6.0"
   license "Apache-2.0"
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.5.1/jreleaser-standalone-1.5.1-linux-aarch64.zip"
-    sha256 "5a2ca766be216a66b9a182f576061a28ced0f9c4feff9e9ed23daa6a68a420b8"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.6.0/jreleaser-standalone-1.6.0-linux-aarch64.zip"
+    sha256 "d6ee9155934c4ecb622bf7ec3e701c72d26310f6746df297f4ad71372793cd59"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.5.1/jreleaser-standalone-1.5.1-linux-x86_64.zip"
-    sha256 "e8886e4a036e47e5b77a1cee4e2612faafc58c7121baf88bab16fbfe50839e06"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.6.0/jreleaser-standalone-1.6.0-linux-x86_64.zip"
+    sha256 "78bb9d4a211af922bcb9e4d9ecb2481bf1a28b2b7709f22b833a9eb5377918f5"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.5.1/jreleaser-standalone-1.5.1-osx-aarch64.zip"
-    sha256 "abe87231d04193f0eecbd1ec9b7ac69c4a7d0af0a0eab52e05ae93ad37d885f7"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.6.0/jreleaser-standalone-1.6.0-osx-aarch64.zip"
+    sha256 "20f7366dc6372aebaac69a75678e255e64a11dee80f84bb83a1fdc169c8d0499"
   end
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.5.1/jreleaser-standalone-1.5.1-osx-x86_64.zip"
-    sha256 "307b358b648e0e5d6130902c032cbe7509a934bdd4c869a2ccb2dafc0e4ade30"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.6.0/jreleaser-standalone-1.6.0-osx-x86_64.zip"
+    sha256 "1e11b3ff10bb2c554dd1b2e9755561254481c5ec44fad7f16dba51c53f18314b"
   end
 
 
@@ -40,6 +40,6 @@ class Jreleaser < Formula
 
   test do
     output = shell_output("#{bin}/jreleaser --version")
-    assert_match "1.5.1", output
+    assert_match "1.6.0", output
   end
 end
