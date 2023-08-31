@@ -1,25 +1,25 @@
-# Generated with JReleaser 1.7.0-SNAPSHOT at 2023-06-27T13:02:28.955362088Z
+# Generated with JReleaser 1.8.0-SNAPSHOT at 2023-08-31T22:12:22.043287351Z
 class Jreleaser < Formula
   desc "Release projects quickly and easily with JReleaser"
   homepage "https://jreleaser.org"
-  version "1.7.0"
+  version "1.8.0"
   license "Apache-2.0"
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.7.0/jreleaser-standalone-1.7.0-linux-aarch64.zip"
-    sha256 "707b8b24c10e70cb26dd978e2e1351c39f118ef85f54760a87e8ab7591112719"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.8.0/jreleaser-standalone-1.8.0-linux-aarch64.zip"
+    sha256 "2efcde7f698feaed5135d15c71c9068d3b0759cbfc36492637c22b98de0e2425"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.7.0/jreleaser-standalone-1.7.0-linux-x86_64.zip"
-    sha256 "932013cfcdd5c18237065419d686c0524b0d1f01812fd67e248ad1fbe9ff913a"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.8.0/jreleaser-standalone-1.8.0-linux-x86_64.zip"
+    sha256 "ad9f70fc724fa1009ec05ec68b84ac306ad54f2e16c2cc0ec32cb3018105ae62"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.7.0/jreleaser-standalone-1.7.0-osx-aarch64.zip"
-    sha256 "e13253be304638b44fa84e884b93fb05b92cd8d6890206112c4b6e9e4b263a16"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.8.0/jreleaser-standalone-1.8.0-osx-aarch64.zip"
+    sha256 "34af29c284f3f69707c741ea96f779b5dcbe64cbdb124743ca3cf93173560df6"
   end
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.7.0/jreleaser-standalone-1.7.0-osx-x86_64.zip"
-    sha256 "7a1947c973e5ab528fa61038433d02b09240f3be6e45212fd2bc003709ced828"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.8.0/jreleaser-standalone-1.8.0-osx-x86_64.zip"
+    sha256 "dd9e195a3199457b14b68f9eadf62a0498c4161640f190182f60463d6c317d77"
   end
 
 
@@ -33,6 +33,7 @@ class Jreleaser < Formula
       Dir["#{libexec}/lib/**/*.dylib"].each do |dylib|
         chmod 0664, dylib
         MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
+        MachO.codesign!(dylib) if Hardware::CPU.arm?
         chmod 0444, dylib
       end
     end
@@ -40,6 +41,6 @@ class Jreleaser < Formula
 
   test do
     output = shell_output("#{bin}/jreleaser --version")
-    assert_match "1.7.0", output
+    assert_match "1.8.0", output
   end
 end
