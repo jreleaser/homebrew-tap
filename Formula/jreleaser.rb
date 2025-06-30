@@ -1,26 +1,26 @@
-# Generated with JReleaser 1.18.0-SNAPSHOT at 2025-04-30T09:23:20.225786408Z
+# Generated with JReleaser 1.19.0-SNAPSHOT at 2025-06-30T19:01:50.059412808Z
 
 class Jreleaser < Formula
   desc "Release projects quickly and easily with JReleaser"
   homepage "https://jreleaser.org"
-  version "1.18.0"
+  version "1.19.0"
   license "Apache-2.0"
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.18.0/jreleaser-standalone-1.18.0-linux-aarch64.zip"
-    sha256 "8f0104ef5d8211201993271d9035d6c8dc35e6120cf7d780912ac8756dd7b55b"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.19.0/jreleaser-standalone-1.19.0-linux-aarch64.zip"
+    sha256 "34f24dc28cfc96efc14f32f3f9edc32896ceae8896c8317eb5783b1a3ed72905"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.18.0/jreleaser-standalone-1.18.0-linux-x86_64.zip"
-    sha256 "65a150701411d56c4ffea27381da4318a7e15224c170f863673b7e098d2f6d4b"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.19.0/jreleaser-standalone-1.19.0-linux-x86_64.zip"
+    sha256 "719078f9083e0cd79898ab9aded7aa175ddc13ccadb9017d08d426cfd068cdde"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.18.0/jreleaser-standalone-1.18.0-osx-aarch64.zip"
-    sha256 "266347fe765f0a2052df49c6e1e5a463e0008f1b0543584c235326449a43f3df"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.19.0/jreleaser-standalone-1.19.0-osx-aarch64.zip"
+    sha256 "99b70e45da159cbde093dedbf652ce8ccc8795aa8f7721fbacb41683a44b183f"
   end
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/jreleaser/jreleaser/releases/download/v1.18.0/jreleaser-standalone-1.18.0-osx-x86_64.zip"
-    sha256 "70c96b110182f4bb95a3e7e8cffd157d22b0a772ecdb90e89a35d43b111a2578"
+    url "https://github.com/jreleaser/jreleaser/releases/download/v1.19.0/jreleaser-standalone-1.19.0-osx-x86_64.zip"
+    sha256 "a4b76e31b0ec19d38f94a110d89aef8fac578a4f9b2b3add3d1c4a4d9a7c71d0"
   end
 
 
@@ -42,6 +42,6 @@ class Jreleaser < Formula
 
   test do
     output = shell_output("#{bin}/jreleaser --version")
-    assert_match "1.18.0", output
+    assert_match "1.19.0", output
   end
 end
